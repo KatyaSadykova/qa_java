@@ -18,7 +18,7 @@ public class LionTest {
     private Feline feline;
 
     @Test
-    public void getKittensWithoutArgumentReturnOne() throws Exception {
+    public void getKittensWithoutArgumentReturnOneTest() throws Exception {
         lion = new Lion(feline, "Самка");
         int defaultKittensValue = 1;
 
@@ -26,14 +26,14 @@ public class LionTest {
     }
 
     @Test
-    public void lionConstructorWrongSexReturnError() {
+    public void lionConstructorWrongSexReturnErrorTest() {
         Exception exception = assertThrows(Exception.class, () -> lion = new Lion(feline, "Гермафродит"));
 
         assertEquals("Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
     }
 
     @Test
-    public void getFoodReturnPredatorFood() throws Exception {
+    public void getFoodReturnPredatorFoodTest() throws Exception {
         lion = new Lion(feline, "Самка");
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
 

@@ -25,12 +25,12 @@ public class CatTest {
     }
 
     @Test
-    public void getSoundReturnMeow() {
+    public void getSoundReturnMeowTest() {
         Assert.assertEquals("Мяу", cat.getSound());
     }
 
     @Test
-    public void getFood() throws Exception {
+    public void getFoodTest() throws Exception {
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
 
         Assert.assertEquals(expectedFood, cat.getFood());

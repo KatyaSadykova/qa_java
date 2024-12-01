@@ -8,8 +8,10 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParamTest {
-    private final String sex;
-    private final Boolean hasMane; // Исправлено: hasMane вместо gasMane
+    private String sex;
+    private Boolean hasMane; // Исправлено: hasMane вместо gasMane
+    private Lion lion;
+    private Feline feline; // Добавлена переменная feline
 
     public LionParamTest(String sex, Boolean hasMane) {
         this.sex = sex;
@@ -25,10 +27,9 @@ public class LionParamTest {
     }
 
     @Test
-    public void doesHaveMane() throws Exception {
-        // Добавлена переменная feline
-        Feline feline = new Feline(); // Инициализирована feline
-        Lion lion = new Lion(feline, sex); // Передан feline в конструктор Lion
+    public void doesHaveManeTest() throws Exception {
+        feline = new Feline(); // Инициализирована feline
+        lion = new Lion(feline, sex); // Передан feline в конструктор Lion
 
         assertEquals(hasMane, lion.doesHaveMane());
     }

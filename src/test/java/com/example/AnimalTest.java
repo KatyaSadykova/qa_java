@@ -17,23 +17,23 @@ public class AnimalTest {
     }
 
     @Test
-    public void getFoodPredatorReturnPredatorFood() throws Exception {
+    public void getFoodPredatorReturnPredatorFoodTest() throws Exception {
         assertEquals(List.of("Животные", "Птицы", "Рыба"), animal.getFood("Хищник"));
     }
 
     @Test
-    public void getFoodHerbivoreReturnHerbivoreFood() throws Exception {
+    public void getFoodHerbivoreReturnHerbivoreFoodTest() throws Exception {
         assertEquals(List.of("Трава", "Различные растения"), animal.getFood("Травоядное"));
     }
 
     @Test
-    public void getFoodInsectivorousReturnErrorString() {
+    public void getFoodInsectivorousReturnErrorStringTest() {
         Exception exception = assertThrows(Exception.class, () -> animal.getFood("Насекомоядные"));
         assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник", exception.getMessage());
     }
 
     @Test
-    public void testGetFamily() {
+    public void testGetFamilyTest() {
         assertEquals("Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи", animal.getFamily());
     }
 }
